@@ -5,7 +5,7 @@
         <h3 class="title is-3">hCard Builder</h3>
         <CardBuilderForm />
       </div>
-      <div class="column is-4 preview-container">
+      <div class="column is-flex is-justify-content-center is-align-items-center is-4 preview-container">
         <PreviewCard
           :card-details="cardDetails" />
       </div>
