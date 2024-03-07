@@ -1,7 +1,7 @@
 <template>
-  <div class="field">
+  <div :class="['field full-width', rootClass]">
     <label class="label" :for="name">
-      {{ label }}
+      {{ label.toUpperCase() }}
     </label>
     <div class="control">
       <input
@@ -34,6 +34,10 @@ export default {
     modelValue: {
       type: String,
       default: ''
+    },
+    rootClass: {
+      default: '',
+      type: String
     }
   },
   computed: {
@@ -66,5 +70,10 @@ input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+label {
+  font-size: $small-font-size;
+  color: $dark-grey;
 }
 </style>
