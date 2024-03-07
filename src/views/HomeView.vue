@@ -6,7 +6,8 @@
         <CardBuilderForm />
       </div>
       <div class="column is-4 preview-container">
-
+        <PreviewCard
+          :card-details="cardDetails" />
       </div>
     </div>
   </div>
@@ -14,15 +15,22 @@
 
 <script>
 import CardBuilderForm from '@/components/Forms/CardBuilderForm'
+import PreviewCard from '@/components/Cards/PreviewCard'
+import { mapState } from 'vuex'
+
 export default {
   name: 'HomeView',
   components: {
-    CardBuilderForm
+    CardBuilderForm,
+    PreviewCard
   },
   data() {
     return {
       surname: ''
     }
+  },
+  computed: {
+    ...mapState('cardBuilder', ['cardDetails'])
   }
 }
 </script>

@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import { Vue3Mq } from 'vue3-mq'
+import { store } from './store'
 
 import './styles/styles.scss'
 
@@ -19,4 +20,5 @@ app.use(Vue3Mq, {
 })
 
 app.use(router)
+app.use(store)
 app.mount('#app')

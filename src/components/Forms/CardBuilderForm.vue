@@ -10,6 +10,8 @@
           label="given name"
           name="givenName"
           v-model.trim="givenName"
+          :validation="v$.givenName"
+          @input="updateCardDetails(givenName, 'givenName')"
           id="givenName" />
   
         <BaseInput
@@ -18,6 +20,8 @@
           label="surname"
           name="surname"
           v-model.trim="surname"
+          :validation="v$.surname"
+          @input="updateCardDetails(surname, 'surname')"
           id="surname" />
       </div>
 
@@ -29,6 +33,8 @@
           label="email"
           name="email"
           v-model.trim="email"
+          :validation="v$.email"
+          @input="updateCardDetails(email, 'email')"
           id="email" />
   
         <BaseInput
@@ -37,6 +43,8 @@
           label="phone"
           name="phone"
           v-model.trim="phone"
+          :validation="v$.givenName"
+          @input="updateCardDetails(phone, 'phone')"
           id="phone" />
       </div>
     </section>
@@ -51,6 +59,8 @@
           label="house name or #"
           name="houseName"
           v-model.trim="houseName"
+          :validation="v$.houseName"
+          @input="updateCardDetails(houseName, 'houseName')"
           id="houseName" />
   
         <BaseInput
@@ -59,6 +69,8 @@
           label="street"
           name="street"
           v-model.trim="street"
+          :validation="v$.street"
+          @input="updateCardDetails(street, 'street')"
           id="street" />
       </div>
 
@@ -70,6 +82,8 @@
           label="suburb"
           name="suburb"
           v-model.trim="suburb"
+          :validation="v$.suburb"
+          @input="updateCardDetails(suburb, 'suburb')"
           id="suburb" />
   
         <BaseInput
@@ -78,6 +92,8 @@
           label="state"
           name="state"
           v-model.trim="state"
+          :validation="v$.state"
+          @input="updateCardDetails(state, 'state')"
           id="state" />
       </div>
 
@@ -89,6 +105,8 @@
           label="postcode"
           name="postcode"
           v-model.trim="postcode"
+          :validation="v$.postcode"
+          @input="updateCardDetails(postcode, 'postcode')"
           id="postcode" />
   
         <BaseInput
@@ -97,6 +115,8 @@
           label="country"
           name="country"
           v-model.trim="country"
+          :validation="v$.country"
+          @input="updateCardDetails(country, 'country')"
           id="country" />
       </div>
     </section>
@@ -113,6 +133,7 @@
 <script>
 import BaseInput from '@/components/BaseControls/BaseInput'
 import BaseButton from '@/components/BaseControls/BaseButton'
+import useValidate from '@vuelidate/core'
 
 export default {
   name: 'CardBuilderForm',
@@ -122,6 +143,7 @@ export default {
   },
   data() {
     return {
+      v$: useValidate(),
       givenName: '',
       surname: '',
       email: '',
@@ -133,7 +155,13 @@ export default {
       postcode: '',
       country: ''
     }
-  }
+  },
+  methods: {
+    updateCardDetails(value, field) {
+      this.$store.dispatch('cardBuilder/setCardDetails', { value, field })
+    }
+  },
+  validations() {}
 }
 </script>
 
