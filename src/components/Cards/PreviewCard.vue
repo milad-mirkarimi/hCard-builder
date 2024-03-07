@@ -53,7 +53,7 @@ export default {
 <style scoped lang="scss">
 @import '@/styles/_variables.scss';
 .card {
-  max-width: 400px;
+  width: 65%;
   height: 250px;
   min-width: 320px;
 }
