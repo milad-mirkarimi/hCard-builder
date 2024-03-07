@@ -1,11 +1,11 @@
 <template>
   <div class="home">
     <div class="columns">
-      <div class="column is-8 p-6 form-container">
+      <div class="column p-6 is-7 form-container">
         <h3 class="title is-3">hCard Builder</h3>
         <CardBuilderForm />
       </div>
-      <div class="column is-flex is-justify-content-center is-align-items-center is-4 preview-container">
+      <div class="column p-6 is-5 is-flex is-justify-content-center is-align-items-center is-4 preview-container">
         <PreviewCard
           :card-details="cardDetails" />
       </div>
@@ -36,9 +36,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/styles/_variables.scss';
+
 .preview-container {
   background: #ccc;
-  height: 100vh;
+  @media screen and (min-width: $small) {
+    height: 100vh;
+  }
 }
 
 .form-container {

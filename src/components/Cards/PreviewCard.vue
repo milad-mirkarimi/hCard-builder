@@ -27,7 +27,7 @@
           <p class="p-0 is-10 column">{{ cardDetails.suburb }}{{ cardDetails.suburb && ',' }} {{ cardDetails.state }}</p>
         </div>
 
-        <div class="detail-container pl-2 columns mb-4">
+        <div class="detail-container pl-2 columns is-mobile mb-4">
           <p class="column is-2 p-0 mb-0">POSTCODE</p>
           <p class="p-0 is-4 column">{{ cardDetails.postcode }}</p>
 
@@ -53,8 +53,9 @@ export default {
 <style scoped lang="scss">
 @import '@/styles/_variables.scss';
 .card {
-  width: 400px;
+  max-width: 400px;
   height: 250px;
+  min-width: 320px;
 }
 .card-header {
   height: 100px;

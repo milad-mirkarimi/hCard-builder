@@ -124,7 +124,7 @@
     <section id="cta">
       <div class="field-group is-flex mb-5">
         <BaseButton color='link' class="mr-5">Upload Avatar</BaseButton>
-        <BaseButton>Create hCard</BaseButton>
+        <BaseButton class="bottom-btn">Create hCard</BaseButton>
       </div>
     </section>
   </form>
@@ -172,5 +172,17 @@ export default {
   font-size: $x-small-font-size;
   border-bottom: 1px solid $light-grey;
   color: $grey;
+}
+
+.field-group {
+  @media screen and (max-width: $small) {
+    flex-direction: column;
+  }
+}
+
+.bottom-btn {
+  @media screen and (max-width: $small) {
+    margin-top: 20px;
+  }
 }
 </style>
