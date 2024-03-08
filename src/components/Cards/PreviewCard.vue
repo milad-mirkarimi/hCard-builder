@@ -1,28 +1,33 @@
 <template>
   <div class="card">
-    <header class="card-header">
-      <h4 class="title is-4 card-header-title mt-4">
+    <header class="card-header is-relative">
+      <h6 class="title is-6 card-header-title mt-6">
         {{ cardDetails.givenName }} {{ cardDetails.surname }}
-      </h4>
+      </h6>
+      <img
+        v-if="cardDetails.avatar"
+        class="avatar"
+        alt="avatar" 
+        :src="cardDetails.avatar" />
     </header>
     <div class="card-content">
       <div class="content">
-        <div class="detail-container pl-2 columns mb-4">
+        <div class="detail-container pl-2 columns mb-4 is-mobile">
           <p class="column is-2 p-0 mb-0">EMAIL</p>
           <p class="p-0 is-10 column">{{ cardDetails.email }}</p>
         </div>
 
-        <div class="detail-container pl-2 columns mb-4">
+        <div class="detail-container pl-2 columns mb-4 is-mobile">
           <p class="column is-2 p-0 mb-0">PHONE</p>
           <p class="p-0 is-10 column">{{ cardDetails.phone }}</p>
         </div>
 
-        <div class="detail-container pl-2 columns mb-4">
+        <div class="detail-container pl-2 columns mb-4 is-mobile">
           <p class="column is-2 p-0 mb-0">ADDRESS</p>
           <p class="p-0 is-10 column">{{ cardDetails.houseName }} {{ cardDetails.street }}</p>
         </div>
 
-        <div class="detail-container pl-2 columns mb-4">
+        <div class="detail-container pl-2 columns mb-4 is-mobile">
           <p class="column is-2 p-0 mb-0"></p>
           <p class="p-0 is-10 column">{{ cardDetails.suburb }}{{ cardDetails.suburb && ',' }} {{ cardDetails.state }}</p>
         </div>
@@ -56,9 +61,31 @@ export default {
   width: 65%;
   height: 250px;
   min-width: 320px;
-}
-.card-header {
-  height: 100px;
+
+  @media screen and (max-width: $large) {
+    width: 95%;
+  }
+
+  @media screen and (max-width: $small) {
+    width: 65%;
+  }
+
+  .card-header {
+    height: 100px;
+
+    h6 {
+      max-width: 220px;
+    }
+
+    .avatar {
+      position: absolute;
+      right: 15px;
+      bottom: -10px;
+      width: 95px;
+      height: 100px;
+      object-fit: cover;
+    }
+  }
 }
 
 .detail-container {

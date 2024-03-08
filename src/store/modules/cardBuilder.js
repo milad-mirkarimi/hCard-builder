@@ -11,7 +11,8 @@ export const state = {
     suburb: '',
     state: '',
     postcode: '',
-    country: ''
+    country: '',
+    avatar: ''
   }
 }
 

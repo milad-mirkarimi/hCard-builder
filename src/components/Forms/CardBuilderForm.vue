@@ -123,7 +123,11 @@
 
     <section id="cta">
       <div class="field-group is-flex mb-5">
-        <BaseButton color='link' class="mr-5">Upload Avatar</BaseButton>
+        <BaseFile
+          @avatar-uploaded="onAvatarUploaded"
+          class="mr-5"
+          label="Upload Avatar"
+          name="upload-avatar" />
         <BaseButton class="bottom-btn">Create hCard</BaseButton>
       </div>
     </section>
@@ -133,13 +137,15 @@
 <script>
 import BaseInput from '@/components/BaseControls/BaseInput'
 import BaseButton from '@/components/BaseControls/BaseButton'
+import BaseFile from '@/components/BaseControls/BaseFile'
 import useValidate from '@vuelidate/core'
 
 export default {
   name: 'CardBuilderForm',
   components: {
     BaseInput,
-    BaseButton
+    BaseButton,
+    BaseFile
   },
   data() {
     return {
@@ -153,12 +159,16 @@ export default {
       suburb: '',
       state: '',
       postcode: '',
-      country: ''
+      country: '',
+      avatar: ''
     }
   },
   methods: {
     updateCardDetails(value, field) {
       this.$store.dispatch('cardBuilder/setCardDetails', { value, field })
+    },
+    onAvatarUploaded(avatar) {
+      this.$store.dispatch('cardBuilder/setCardDetails', { value: avatar, field: 'avatar' })
     }
   },
   validations() {}
