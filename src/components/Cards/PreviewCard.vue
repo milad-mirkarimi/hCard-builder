@@ -13,31 +13,31 @@
     <div class="card-content">
       <div class="content">
         <div class="detail-container pl-2 columns mb-4 is-mobile">
-          <p class="column is-2 p-0 mb-0">EMAIL</p>
-          <p class="p-0 is-10 column">{{ cardDetails.email }}</p>
+          <p class="column is-3 p-0 mb-0">EMAIL</p>
+          <p class="p-0 is-9 column">{{ cardDetails.email }}</p>
         </div>
 
         <div class="detail-container pl-2 columns mb-4 is-mobile">
-          <p class="column is-2 p-0 mb-0">PHONE</p>
-          <p class="p-0 is-10 column">{{ cardDetails.phone }}</p>
+          <p class="column is-3 p-0 mb-0">PHONE</p>
+          <p class="p-0 is-9 column">{{ cardDetails.phone }}</p>
         </div>
 
         <div class="detail-container pl-2 columns mb-4 is-mobile">
-          <p class="column is-2 p-0 mb-0">ADDRESS</p>
-          <p class="p-0 is-10 column">{{ cardDetails.houseName }} {{ cardDetails.street }}</p>
+          <p class="column is-3 p-0 mb-0">ADDRESS</p>
+          <p class="p-0 is-9 column">{{ cardDetails.houseName }} {{ cardDetails.street }}</p>
         </div>
 
         <div class="detail-container pl-2 columns mb-4 is-mobile">
-          <p class="column is-2 p-0 mb-0"></p>
-          <p class="p-0 is-10 column">{{ cardDetails.suburb }}{{ cardDetails.suburb && ',' }} {{ cardDetails.state }}</p>
+          <p class="column is-3 p-0 mb-0"></p>
+          <p class="p-0 is-9 column">{{ cardDetails.suburb }}{{ cardDetails.suburb && ',' }} {{ cardDetails.state }}</p>
         </div>
 
         <div class="detail-container pl-2 columns is-mobile mb-4">
-          <p class="column is-2 p-0 mb-0">POSTCODE</p>
+          <p class="column is-3 p-0 mb-0">POSTCODE</p>
           <p class="p-0 is-4 column">{{ cardDetails.postcode }}</p>
 
-          <p class="column is-2 p-0 mb-0">COUNTRY</p>
-          <p class="p-0 is-4 column">{{ cardDetails.country }}</p>
+          <p class="column is-3 p-0 mb-0">COUNTRY</p>
+          <p class="p-0 is-5 column">{{ cardDetails.country }}</p>
         </div>
       </div>
     </div>
@@ -58,17 +58,8 @@ export default {
 <style scoped lang="scss">
 @import '@/styles/_variables.scss';
 .card {
-  width: 65%;
   height: 250px;
-  min-width: 320px;
-
-  @media screen and (max-width: $large) {
-    width: 95%;
-  }
-
-  @media screen and (max-width: $small) {
-    width: 65%;
-  }
+  min-width: 340px;
 
   .card-header {
     height: 100px;
