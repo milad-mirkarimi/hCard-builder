@@ -4,6 +4,7 @@
       <p class="section-title mb-5">PERSONAL DETAILS</p>
       <div class="field-group is-flex">
         <BaseInput
+          test-data="givenName"
           root-class="mr-5"
           placeholder="Sam"
           type="text"
@@ -159,8 +160,7 @@ export default {
       suburb: '',
       state: '',
       postcode: '',
-      country: '',
-      avatar: ''
+      country: ''
     }
   },
   methods: {

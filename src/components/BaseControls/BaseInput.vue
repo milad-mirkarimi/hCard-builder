@@ -1,10 +1,14 @@
 <template>
   <div :class="['field full-width', rootClass]">
-    <label class="label" :for="name">
+    <label
+      test-data="label"
+      class="label" 
+      :for="name">
       {{ label.toUpperCase() }}
     </label>
     <div class="control">
       <input
+        test-data="input"
         id="firstname"
         class="input"
         ref="inputRef"

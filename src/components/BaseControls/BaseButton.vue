@@ -1,5 +1,7 @@
 <template>
-  <button :class="[`button is-fullwidth is-${color}`]">
+  <button
+    test-data="button"
+    :class="[`button is-fullwidth is-${color}`]">
     <slot />
   </button>
 </template>
