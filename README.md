@@ -21,7 +21,7 @@ npm run lint
 ```
 
 ## 💁 A note on file structure
-All components can be found under components directory. The purpose of `BaseControls` is to have a dedicated place to maintain, develop and scale a UI library. Basically to have a design system for consistecy and better documentation.
+All components can be found under `components` directory. The purpose of `components/BaseControls` is to have a dedicated place to maintain, develop and scale a UI library. Basically to have a design system for consistecy and better documentation.
 
 ## 🧘 A note on unit tests
 All the files that Jest can recognise are formatted with **.test.js
@@ -29,7 +29,7 @@ You may also have reaslised that related tests for a component are exactly in th
 component can be found. This is different from the traditional way of having a `tests` directory in the project and write all the tests there. The decision was made to make development expereince better by removing the hassle for navigating through the project to read a component implementation and again navigating in the `tests` directory to find related tests. You can find more information in this article from Kent C. Dodds who is a test specialist and a professional trainer who I adopted methodology when writing tests: [avoid-nesting-when-youre-testing](https://kentcdodds.com/blog/avoid-nesting-when-youre-testing)
 
 ## 🤹 A note on third party packages
-This project is very lite with third party packages, all the solutions are custome in order to improve performace. The only third party package at this stage(beside core Vue ecosystem packages) is Vuelidate which a project benefits massively from form validation logics.
+This project is very lite with third party packages, all the solutions are custom in order to improve performace. The only third party package at this stage(beside core Vue ecosystem packages) is Vuelidate which a project benefits massively from form validation logics.
 
 
 ### Customize configuration
